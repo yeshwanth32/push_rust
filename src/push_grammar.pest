@@ -1,0 +1,14 @@
+number = @{
+    "-"?
+    ~ ("0" | ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)
+    ~ ("." ~ ASCII_DIGIT*)?
+}
+
+boolean = {"false" | "true"}
+
+string = ${ "\"" ~ inner ~ "\"" }
+inner = @{ char* }
+char = _{
+    !("\"" | "\\" | "//") ~ ANY
+    | "\\" ~ ("\"" | "\\" | "/" | "b" | "f" | "n" | "r" | "t")
+}
