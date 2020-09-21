@@ -12,5 +12,5 @@ cargo build
 cargo run
 ```
 
-This should install the required packages and hopefully print "Hello World"
+This should install the required packages and just print "Hello World"
 
